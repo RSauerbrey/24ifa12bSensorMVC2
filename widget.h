@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include "datagate.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,8 +20,10 @@ public:
 
 public slots:
     void beenden();
+    void action();
 
 private:
     Ui::Widget *ui;
+    DataGate *dG;
 };
 #endif // WIDGET_H
