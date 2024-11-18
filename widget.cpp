@@ -26,6 +26,9 @@ void Widget::beenden()
 
 void Widget::action()
 {
-
-    ui->edtAusgabe->append(QString::fromStdString(dG->getSensorType()));
+    double werte[100];
+    QString str;
+    dG->fetchData(werte);
+    for(int i = 0 ; i < dG->dataSize(); i++)
+       ui->edtAusgabe->append(str.number( werte[i] ));
 }
