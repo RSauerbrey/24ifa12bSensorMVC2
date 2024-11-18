@@ -10,6 +10,7 @@ class Widget;
 }
 QT_END_NAMESPACE
 
+
 class Widget : public QWidget
 {
     Q_OBJECT
@@ -17,13 +18,9 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
-
-public slots:
-    void beenden();
-    void action();
+    Ui::Widget *getUI();
 
 private:
     Ui::Widget *ui;
-    DataGate *dG;
 };
 #endif // WIDGET_H

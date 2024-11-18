@@ -2,12 +2,13 @@
 
 View::View() {}
 
-void View::update()
+void View::setModel(Model *model)
 {
-
+    this->model = model;
 }
 
-void View::notify()
+void View::setController(Controller *controller)
 {
-
+    this->controller = controller;
 }
+

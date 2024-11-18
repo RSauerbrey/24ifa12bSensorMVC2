@@ -2,16 +2,21 @@
 #define MODEL_H
 
 #include <QObject>
+#include "datagate.h"
+#include "feuchtesensor.h"
+#include "temperatursensor.h"
 
 class View;
 class Model
 {
 private:
     View *view;
-    Sensoren...
+    QVector <DataGate*> dG; //Liste von Sensoren (Vektor)
+    QString state;
 public:
     Model();
-    void update();
+    void setView(View *view);
+    void update(QString);
     QString getState();
 };
 

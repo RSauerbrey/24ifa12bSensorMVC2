@@ -12,7 +12,9 @@ private:
     Model *model;
 public:
     Controller();
-    void action();
+    void setView(View *view);
+    void setModel(Model *model);
+    void action(QString);
 };
 
 #endif // CONTROLLER_H
