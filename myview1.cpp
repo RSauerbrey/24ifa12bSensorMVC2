@@ -26,6 +26,7 @@ void MyView1::update(QString)
 
 void MyView1::notify(QString msg)
 {
+    widget->getUI()->edtAusgabe->clear();
     if( msg == "GET_SENSOR_LIST")
     {
         widget->getUI()->edtAusgabe->append( model->getState() );

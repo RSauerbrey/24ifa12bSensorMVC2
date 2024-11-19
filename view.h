@@ -5,7 +5,7 @@
 #include "controller.h"
 #include "model.h"
 
-class View: public QObject
+class View : public QObject
 {
     Q_OBJECT
 protected:

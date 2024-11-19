@@ -25,8 +25,15 @@ void Model::update(QString str)
     {
         state.clear();
         DataGate *d;
+        double values[100];
+
         foreach(d, dG )
+        {
+            d->fetchData(values);
             state.append(d->getSensorType()+"\n");
+            for(int i = 0 ; i < d->dataSize(); i++)
+                state.append((QString::number(values[i])) + "\n");
+        }
         msg = "GET_SENSOR_LIST";
 
     }
