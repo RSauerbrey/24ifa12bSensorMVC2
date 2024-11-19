@@ -51,6 +51,10 @@ void MyView1::beenden()
 void MyView1::action()
 {
 
+    if(widget->getUI()->btnTemperatur->isChecked())
+        controller->action("REMOVE_TEMP");
+    else if(widget->getUI()->btnFeuchte->isChecked())
+        controller->action("REMOVE_FEUCHTE");
 }
 
 void MyView1::listsensors()

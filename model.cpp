@@ -21,6 +21,48 @@ void Model::update(QString str)
         dG.append(new FeuchteSensor);
         msg = "FEUCHTE_SENSOR_ADDED";
     }
+    else if(str == "REMOVE_TEMP")
+    {
+        DataGate *d;
+        int i = 0;
+        bool sensorFound = false;
+        foreach(d, dG )
+        {
+            if(d->getSensorType() == "Temperatur")
+            {
+                dG.remove(i);
+                sensorFound = true;
+                msg = "TEMP_SENSOR_REMOVED";
+                break;
+            }
+            i++;
+
+        }
+        if( !sensorFound )
+            msg = "SENSOR_NOT_FOUND";
+    }
+    else if(str == "REMOVE_FEUCHTE")
+    {
+        DataGate *d;
+        int i = 0;
+        bool sensorFound = false;
+        foreach(d, dG )
+        {
+            if(d->getSensorType() == "Feuchte")
+            {
+                dG.remove(i);
+                sensorFound = true;
+                msg = ""
+                      "FEUCHTE_SENSOR_REMOVED";
+                break;
+            }
+            i++;
+
+        }
+        if( !sensorFound )
+            msg = "SENSOR_NOT_FOUND";
+
+    }
     else if(str == "LIST_SENSORS")
     {
         state.clear();
